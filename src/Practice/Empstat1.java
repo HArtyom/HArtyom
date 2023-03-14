@@ -33,7 +33,6 @@ public class Empstat1 {
     @FindBy(how=How.XPATH, xpath="//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[1]/form/ul/li")
     WebElement asd;
 
-
     @FindBy(how=How.XPATH, xpath="//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[3]/button")
     WebElement Continue;
     @FindBy(how=How.XPATH, xpath="//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/form/div[2]/div[1]/div[2]/button")
@@ -92,16 +91,16 @@ public class Empstat1 {
 //        WebElement q;
 //
 //        for(WebElement j: qwe){
+            System.out.println(asd);
 
 
-            List<WebElement> links = driver.findElements(By.xpath("//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[1]/form/ul/li"));
-            for( int i = 0; i < links.size(); i++)
+            List<WebElement> countries = driver.findElements(By.xpath("//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[1]/form/ul"));
+            for( int i = 0; i < countries.size(); i++)
             {
-                //The stop below is necessary to store all links in a list to access later.
-                links = driver.findElements(By.xpath("//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[1]/form/ul/li"));
-                links.get(i).click();
-                // Your code here
 
+//                countries = driver.findElements(By.xpath("//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[1]/form/ul"));
+                countries.get(i).click();
+                System.out.print(countries.get(i));
 
 
             waitForVisible(driver, asd);

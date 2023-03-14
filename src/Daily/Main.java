@@ -26,9 +26,9 @@ public class Main {
         WebDriver driver = new ChromeDriver(ops);
         driver.manage().window().maximize();
         if (test){
-//            ((JavascriptExecutor) driver).executeScript("window.open()");
-//            ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-//            driver.switchTo().window(tabs.get(1));
+            ((JavascriptExecutor) driver).executeScript("window.open()");
+            ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+            driver.switchTo().window(tabs.get(1));
             driver.get("https://nativeteams.com/pricing");
         }
         else{
