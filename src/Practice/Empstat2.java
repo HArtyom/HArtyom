@@ -33,7 +33,7 @@ public class Empstat2 {
 
         emp.employedstatus();
         emp.setupempstatus();
-        emp.asd("0.5", "1000000");
+        emp.checkCountries("0.5", "1000000");
 
 
 

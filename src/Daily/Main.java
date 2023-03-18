@@ -1,16 +1,11 @@
 package Daily;
 
-import Practice.GmailPageObj;
+
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import org.zeromq.ZThread;
-
-import java.time.Duration;
 import java.util.ArrayList;
 
 public class Main {
@@ -124,20 +119,21 @@ public class Main {
             test = true;
             Daily();
         }
+
+        ((JavascriptExecutor) driver).executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(2));
+
+        driver.get("https://app.nativeteams.com/login");
+        Login log = PageFactory.initElements(driver, Login.class);
+        log.enterEmail("artyom.harutyunyan+32@nteams.com");
+        log.enterPassword("Password1!");
+        EmpStatus emp = PageFactory.initElements(driver, EmpStatus.class);
+        emp.employedstatus();
+        emp.setupempstatus();
+        emp.checkCountries("0.5", "250000");
+
         System.exit(200);
-
-//        driver.get("https://app.nativeteams.com/login");
-//        Login log = PageFactory.initElements(driver, Login.class);
-//        log.enterEmail("artyom.harutyunyan+32@nteams.com");
-//        log.enterPassword("Password1!");
-//        EmpStatus emp = PageFactory.initElements(driver, EmpStatus.class);
-//        emp.employedstatus();
-//        emp.setupempstatus();
-//        emp.Albania("10", "50000");
-
-
-
-
     }
 
 }
