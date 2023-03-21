@@ -1,17 +1,14 @@
 package Daily;
 
-
 import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
-import java.util.ArrayList;
 
 public class Main {
 
     boolean test = false;
-
     @Test
     public void Daily() throws InterruptedException {
 
@@ -21,9 +18,6 @@ public class Main {
         WebDriver driver = new ChromeDriver(ops);
         driver.manage().window().maximize();
         if (test){
-            ((JavascriptExecutor) driver).executeScript("window.open()");
-            ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-            driver.switchTo().window(tabs.get(1));
             driver.get("https://nativeteams.com/pricing");
         }
         else{
@@ -34,95 +28,21 @@ public class Main {
         cookieaccept.click();
 
         SignUp sign = PageFactory.initElements(driver, SignUp.class);
-        sign.StartFree();
-        sign.FreeFirstName("Afr");
-        sign.FreeLastName("Test");
-        sign.FreeEmail();
-        sign.FreePass("Password1!");
-        sign.FreeSignButton();
-        sign.SuccRegModal();
-        sign.FreeModalClose();
-        sign.GetPaym();
-        sign.PaymFN("Apay");
-        sign.PaymLN("Test");
-        sign.PaymEmail();
-        sign.PaymPass("Password1!");
-        sign.PaymPrToCheckout();
-        sign.PaymCouponCode("productteam");
-        sign.PaymCardHolder("Pelagonian Limited");
-        sign.PaymCardNumber("5116743567844845");
-        sign.PaymExpiryDate("0724");
-        sign.PaymCVC("106");
-        sign.PaymProceed();
-        sign.SuccRegModal();
-        sign.PaymModalclose();
-        sign.GetRem();
-        sign.PaymFN("Arem");
-        sign.PaymLN("Test");
-        sign.PaymEmail();
-        sign.PaymPass("Password1!");
-        sign.PaymPrToCheckout();
-        sign.PaymCouponCode("productteam");
-        sign.PaymCardHolder("Pelagonian Limited");
-        sign.PaymCardNumber("5116743567844845");
-        sign.PaymExpiryDate("0724");
-        sign.PaymCVC("106");
-        sign.PaymProceed();
-        sign.SuccRegModal();
-        sign.PaymModalclose();
-        sign.GetTax();
-        sign.PaymFN("Atax");
-        sign.PaymLN("Test");
-        sign.PaymEmail();
-        sign.PaymPass("Password1!");
-        sign.PaymPrToCheckout();
-        sign.PaymCouponCode("productteam");
-        sign.PaymCardHolder("Pelagonian Limited");
-        sign.PaymCardNumber("5116743567844845");
-        sign.PaymExpiryDate("0724");
-        sign.PaymCVC("106");
-        sign.PaymProceed();
-        sign.SuccRegModal();
-        sign.PaymModalclose();
-        sign.ForTeams();
-        sign.GetCN();
-        sign.PaymFN("Acn");
-        sign.PaymLN("Test");
-        sign.PaymEmail();
-        sign.PaymPass("Password1!");
-        sign.PaymPrToCheckout();
-        sign.PaymCouponCode("productteam");
-        sign.PaymCardHolder("Pelagonian Limited");
-        sign.PaymCardNumber("5116743567844845");
-        sign.PaymExpiryDate("0724");
-        sign.PaymCVC("106");
-        sign.PaymProceed();
-        sign.SuccRegModal();
-        sign.PaymModalclose();
-        sign.ForTeams();
-        sign.GetEmp();
-        sign.PaymFN("Aemp");
-        sign.PaymLN("Test");
-        sign.PaymEmail();
-        sign.PaymPass("Password1!");
-        sign.PaymPrToCheckout();
-        sign.PaymCouponCode("productteam");
-        sign.PaymCardHolder("Pelagonian Limited");
-        sign.PaymCardNumber("5116743567844845");
-        sign.PaymExpiryDate("0724");
-        sign.PaymCVC("106");
-        sign.PaymProceed();
-        sign.SuccRegModal();
-        sign.PaymModalclose();
+        sign.Signu();
 
         if (!test){
             test = true;
             Daily();
         }
 
-        ((JavascriptExecutor) driver).executeScript("window.open()");
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(2));
+        driver.get("https://stage.nativeteams.com/login");
+        Login logStage = PageFactory.initElements(driver, Login.class);
+        logStage.enterEmail("artyom.harutyunyan+22@nteams.com");
+        logStage.enterPassword("Password1!");
+        EmpStatus empStage = PageFactory.initElements(driver, EmpStatus.class);
+        empStage.employedstatus();
+        empStage.setupempstatus();
+        empStage.checkCountries("0.5", "250000");
 
         driver.get("https://app.nativeteams.com/login");
         Login log = PageFactory.initElements(driver, Login.class);

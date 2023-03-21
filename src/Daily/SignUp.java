@@ -1,7 +1,6 @@
 package Daily;
 
 
-import org.junit.Test;
 import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
@@ -341,6 +340,89 @@ public class SignUp {
                         e.printStackTrace();
                 }
 
+        }
+
+        public void Signu() {
+                this.StartFree();
+                this.FreeFirstName("Afr");
+                this.FreeLastName("Test");
+                this.FreeEmail();
+                this.FreePass("Password1!");
+                this.FreeSignButton();
+                this.SuccRegModal();
+                this.FreeModalClose();
+                this.GetPaym();
+                this.PaymFN("Apay");
+                this.PaymLN("Test");
+                this.PaymEmail();
+                this.PaymPass("Password1!");
+                this.PaymPrToCheckout();
+                this.PaymCouponCode("productteam");
+                this.PaymCardHolder("Pelagonian Limited");
+                this.PaymCardNumber("5116743567844845");
+                this.PaymExpiryDate("0724");
+                this.PaymCVC("106");
+                this.PaymProceed();
+                this.SuccRegModal();
+                this.PaymModalclose();
+                this.GetRem();
+                this.PaymFN("Arem");
+                this.PaymLN("Test");
+                this.PaymEmail();
+                this.PaymPass("Password1!");
+                this.PaymPrToCheckout();
+                this.PaymCouponCode("productteam");
+                this.PaymCardHolder("Pelagonian Limited");
+                this.PaymCardNumber("5116743567844845");
+                this.PaymExpiryDate("0724");
+                this.PaymCVC("106");
+                this.PaymProceed();
+                this.SuccRegModal();
+                this.PaymModalclose();
+                this.GetTax();
+                this.PaymFN("Atax");
+                this.PaymLN("Test");
+                this.PaymEmail();
+                this.PaymPass("Password1!");
+                this.PaymPrToCheckout();
+                this.PaymCouponCode("productteam");
+                this.PaymCardHolder("Pelagonian Limited");
+                this.PaymCardNumber("5116743567844845");
+                this.PaymExpiryDate("0724");
+                this.PaymCVC("106");
+                this.PaymProceed();
+                this.SuccRegModal();
+                this.PaymModalclose();
+                this.ForTeams();
+                this.GetCN();
+                this.PaymFN("Acn");
+                this.PaymLN("Test");
+                this.PaymEmail();
+                this.PaymPass("Password1!");
+                this.PaymPrToCheckout();
+                this.PaymCouponCode("productteam");
+                this.PaymCardHolder("Pelagonian Limited");
+                this.PaymCardNumber("5116743567844845");
+                this.PaymExpiryDate("0724");
+                this.PaymCVC("106");
+                this.PaymProceed();
+                this.SuccRegModal();
+                this.PaymModalclose();
+                this.ForTeams();
+                this.GetEmp();
+                this.PaymFN("Aemp");
+                this.PaymLN("Test");
+                this.PaymEmail();
+                this.PaymPass("Password1!");
+                this.PaymPrToCheckout();
+                this.PaymCouponCode("productteam");
+                this.PaymCardHolder("Pelagonian Limited");
+                this.PaymCardNumber("5116743567844845");
+                this.PaymExpiryDate("0724");
+                this.PaymCVC("106");
+                this.PaymProceed();
+                this.SuccRegModal();
+                this.PaymModalclose();
         }
 }
 
