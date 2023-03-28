@@ -54,7 +54,7 @@ public class Login {
     public void waitForVisible(WebDriver driver, WebElement element) {
         try {
             Thread.sleep(1000);
-            System.out.println("Waiting for element visibility");
+//            System.out.println("Waiting for element visibility");
             WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(15));
             wait.until(ExpectedConditions.visibilityOf(element));
         } catch (Exception e) {

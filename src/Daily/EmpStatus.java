@@ -61,7 +61,7 @@ public class EmpStatus {
             actions.moveToElement(inputAlb).click();
             actions.sendKeys(belowmin);
             actions.moveToElement(Calculate).click().perform();
-
+            System.out.println("Below min printed");
             Actions actions78 = new Actions(driver);
             actions78.click(driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div/div[2]/div[1]/div[2]/div[2]/div[2]/form/div[2]/div[1]/div[2]/div[1]/input")))
                     .keyDown(Keys.CONTROL)
@@ -77,7 +77,7 @@ public class EmpStatus {
             actions2.moveToElement(Calculate).click().perform();
             waitForVisible(driver, CalcContinue);
             actions2.moveToElement(CalcContinue).click().perform();
-
+            System.out.println("Above min printed");
             driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[3]/button[1]")).click();
             driver.findElement(By.xpath("//*[@id=\"app\"]/div/main/div/div[1]/div[2]/div/div[1]/div[1]/div[2]/div[1]/div[3]/button[1]")).click();
 

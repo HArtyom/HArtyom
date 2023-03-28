@@ -6,6 +6,8 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.chrome.ChromeOptions;
 import org.openqa.selenium.support.PageFactory;
 
+import java.util.ArrayList;
+
 public class Main {
 
     boolean test = false;
@@ -44,6 +46,10 @@ public class Main {
         empStage.setupempstatus();
         empStage.checkCountries("0.5", "250000");
 
+
+        ((JavascriptExecutor) driver).executeScript("window.open()");
+        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
+        driver.switchTo().window(tabs.get(1));
         driver.get("https://app.nativeteams.com/login");
         Login log = PageFactory.initElements(driver, Login.class);
         log.enterEmail("artyom.harutyunyan+32@nteams.com");
