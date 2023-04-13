@@ -24,6 +24,8 @@ public class SignUp {
         WebElement FreeLastName;
         @FindBy(how= How.XPATH, xpath="//*[@id=\"free-input-email\"]")
         WebElement FreeEmail;
+        @FindBy(how= How.XPATH, xpath="//*[@id=\"start-free-form\"]/div[4]/div/input")
+        WebElement FreePhoneNumber;
         @FindBy(how= How.XPATH, xpath="//*[@id=\"free-input-password\"]")
         WebElement FreePass;
         @FindBy(how= How.XPATH, xpath="//*[@id=\"btn-start-free\"]")
@@ -38,6 +40,8 @@ public class SignUp {
         WebElement PaymLN;
         @FindBy(how= How.XPATH, xpath="//*[@id=\"input-email\"]")
         WebElement PaymEmail;
+        @FindBy(how= How.XPATH, xpath="//*[@id=\"user-register-form\"]/div[5]/div/input")
+        WebElement PaymPhoneNumber;
         @FindBy(how= How.XPATH, xpath="//*[@id=\"input-password\"]")
         WebElement PaymPass;
         @FindBy(how= How.XPATH, xpath="//*[@id=\"btn-register\"]")
@@ -115,6 +119,15 @@ public class SignUp {
                 String Fremail = String.format("artyom.harutyunyan+%s", Freedate + "@nteams.com");
                 FreeEmail.sendKeys(Fremail);
         }
+        public void FreePhoneNumber(String Phonenumber)
+        {
+                waitForVisible(driver, FreePhoneNumber);
+                Actions actions=new Actions(driver);
+                actions.moveToElement(FreePhoneNumber);
+                actions.click();
+                actions.build().perform();
+                FreePhoneNumber.sendKeys(Phonenumber);
+        }
         public void FreePass(String Pass)
         {
                 waitForVisible(driver, FreePass);
@@ -181,6 +194,15 @@ public class SignUp {
                 Paymdate = Paymdate.replaceAll(":", "").replaceAll("-", "").replaceAll("-", "").replace(".", "").replaceAll("T", "");
                 String Paymemail = String.format("artyom.harutyunyan+%s", Paymdate + "@nteams.com");
                 PaymEmail.sendKeys(Paymemail);
+        }
+        public void PaymPhoneNumber(String Phonenumber)
+        {
+                waitForVisible(driver, PaymPhoneNumber);
+                Actions actions=new Actions(driver);
+                actions.moveToElement(PaymPhoneNumber);
+                actions.click();
+                actions.build().perform();
+                PaymPhoneNumber.sendKeys(Phonenumber);
         }
         public void PaymPass(String Pass)
         {
@@ -347,6 +369,7 @@ public class SignUp {
                 this.FreeFirstName("Afr");
                 this.FreeLastName("Test");
                 this.FreeEmail();
+                this.FreePhoneNumber("77123456");
                 this.FreePass("Password1!");
                 this.FreeSignButton();
                 this.SuccRegModal();
@@ -355,6 +378,7 @@ public class SignUp {
                 this.PaymFN("Apay");
                 this.PaymLN("Test");
                 this.PaymEmail();
+                this.PaymPhoneNumber("77123456");
                 this.PaymPass("Password1!");
                 this.PaymPrToCheckout();
                 this.PaymCouponCode("productteam");
@@ -369,6 +393,7 @@ public class SignUp {
                 this.PaymFN("Arem");
                 this.PaymLN("Test");
                 this.PaymEmail();
+                this.PaymPhoneNumber("77123456");
                 this.PaymPass("Password1!");
                 this.PaymPrToCheckout();
                 this.PaymCouponCode("productteam");
@@ -383,6 +408,7 @@ public class SignUp {
                 this.PaymFN("Atax");
                 this.PaymLN("Test");
                 this.PaymEmail();
+                this.PaymPhoneNumber("77123456");
                 this.PaymPass("Password1!");
                 this.PaymPrToCheckout();
                 this.PaymCouponCode("productteam");
@@ -398,6 +424,7 @@ public class SignUp {
                 this.PaymFN("Acn");
                 this.PaymLN("Test");
                 this.PaymEmail();
+                this.PaymPhoneNumber("77123456");
                 this.PaymPass("Password1!");
                 this.PaymPrToCheckout();
                 this.PaymCouponCode("productteam");
@@ -413,6 +440,7 @@ public class SignUp {
                 this.PaymFN("Aemp");
                 this.PaymLN("Test");
                 this.PaymEmail();
+                this.PaymPhoneNumber("77123456");
                 this.PaymPass("Password1!");
                 this.PaymPrToCheckout();
                 this.PaymCouponCode("productteam");

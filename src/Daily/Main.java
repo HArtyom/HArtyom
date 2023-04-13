@@ -11,6 +11,7 @@ import java.util.ArrayList;
 public class Main {
 
     boolean test = false;
+
     @Test
     public void Daily() throws InterruptedException {
 
@@ -26,38 +27,27 @@ public class Main {
             driver.get("https://www-stage.nativeteams.com/pricing");
             Thread.sleep(10000);
         }
-        WebElement cookieaccept = driver.findElement(By.xpath("//*[@id=\"cookieModal\"]/div/div/div/div/div/div/div/button[1]"));
+        WebElement cookieaccept = driver.findElement(By.xpath("//*[@id=\"acceptCookies\"]"));
         cookieaccept.click();
 
         SignUp sign = PageFactory.initElements(driver, SignUp.class);
         sign.Signu();
 
+        if (test){
+            driver.get("https://app.nativeteams.com/login");
+        }
+        else{
+            driver.get("https://stage.nativeteams.com/login");
+            Thread.sleep(10000);
+        }
+
+        EmpStatus emp = PageFactory.initElements(driver, EmpStatus.class);
+        emp.EmpStatus();
+
         if (!test){
             test = true;
             Daily();
         }
-
-        driver.get("https://stage.nativeteams.com/login");
-        Login logStage = PageFactory.initElements(driver, Login.class);
-        logStage.enterEmail("artyom.harutyunyan+22@nteams.com");
-        logStage.enterPassword("Password1!");
-        EmpStatus empStage = PageFactory.initElements(driver, EmpStatus.class);
-        empStage.employedstatus();
-        empStage.setupempstatus();
-        empStage.checkCountries("0.5", "250000");
-
-
-        ((JavascriptExecutor) driver).executeScript("window.open()");
-        ArrayList<String> tabs = new ArrayList<String>(driver.getWindowHandles());
-        driver.switchTo().window(tabs.get(1));
-        driver.get("https://app.nativeteams.com/login");
-        Login log = PageFactory.initElements(driver, Login.class);
-        log.enterEmail("artyom.harutyunyan+32@nteams.com");
-        log.enterPassword("Password1!");
-        EmpStatus emp = PageFactory.initElements(driver, EmpStatus.class);
-        emp.employedstatus();
-        emp.setupempstatus();
-        emp.checkCountries("0.5", "250000");
 
         System.exit(200);
     }

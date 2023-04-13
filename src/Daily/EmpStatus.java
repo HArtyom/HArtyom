@@ -4,11 +4,14 @@ import org.openqa.selenium.*;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.How;
+import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import java.time.Duration;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+
+import java.util.ArrayList;
 import java.util.List;
 
 
@@ -107,5 +110,14 @@ public class EmpStatus {
     }
 
 
+    public void EmpStatus(){
+        Login log = PageFactory.initElements(driver, Login.class);
+        log.enterEmail("artyom.harutyunyan+32@nteams.com");
+        log.enterPassword("Password1!");
+        EmpStatus emp = PageFactory.initElements(driver, EmpStatus.class);
+        emp.employedstatus();
+        emp.setupempstatus();
+        emp.checkCountries("0.5", "250000");
+    }
 
 }
